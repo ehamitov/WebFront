@@ -1,0 +1,26 @@
+div.container {
+  text-align: center;
+  padding: 10px 20px;
+  display:flex;
+}
+.flex-container {
+  display: flex;
+  background-color: DodgerBlue;
+}
+
+.flex-container > div {
+  background-color: #087285;
+  margin: 10px;
+  padding: 20px;
+  font-size: 30px;
+}
+
+#btn_back{
+  margin-top: 1%;
+  background-color:#8b71cf ;
+  border-radius: 5px;
+}
+#word_back{
+  color: white;
+  text-decoration: none;
+}
