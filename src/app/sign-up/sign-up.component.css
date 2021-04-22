@@ -4,7 +4,9 @@ body, input, button {
 }
 
 body {
-  background-color: cadetblue;
+  margin-left: 700px;
+
+  background-image: url("https://swvaux.com/wp-content/uploads/2018/09/newsletter-background-1024x6641.png");
 }
 
 h1 {
@@ -17,7 +19,8 @@ h1 {
 form {
   width: 500px;
   padding: 1px;
-  margin: 0 auto;
+  margin: 76px auto;
+
 }
 
 .segment {

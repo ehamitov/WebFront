@@ -1,3 +1,10 @@
+body{
+  margin: 140px 740px;
+  padding: 1px ;
+  width: 320px;
+}
+
+
 #btn_back{
   margin-top: 1%;
   background-color:#8b71cf ;

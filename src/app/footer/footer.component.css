@@ -1,8 +1,10 @@
 .footer{
-  background: skyblue;
+  background-image: url("https://krot.info/uploads/posts/2020-01/1580241678_17-p-foni-s-rabotami-68.jpg");
   margin-top: 25px;
+
 }
 .footer .container {
+
   padding: 0px 5%;
   display: flex;
   justify-content: space-between;
@@ -10,7 +12,9 @@
   flex-wrap: wrap;
 }
 .first {
+  margin-left: 45px;
   flex: 1;
+
 }
 
 .second {
@@ -35,5 +39,6 @@
 }
 
 h4 , p , li {
-  color: black;
+  color: skyblue;
+
 }

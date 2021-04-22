@@ -4,6 +4,9 @@
 
 .row {
   display: flex;
+  margin-top: 15px;
+
+  background-image: url("https://img.macg.co/2017/5/macgpic-1494403529-3825309659964-co1-jpt.jpg");
   min-height: 100%;
   height: 100%;
 }
