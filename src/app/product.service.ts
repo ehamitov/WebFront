@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
 import {Observable, of} from 'rxjs';
 import { products } from './products';
-
+import {HttpClient} from "@angular/common/http";
+import{Product} from './products';
+import {Category} from './categories';
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
-
-  constructor() { }
-
+  categories: Category[];
+  constructor(private http: HttpClient) { }
   getProduct(id: number): Observable<any> {
     return of(products.find(product => product.id === id));
   }

@@ -4,7 +4,18 @@ body{
   width: 320px;
 }
 
-
+h3{
+  font-size: 45px;
+  color: burlywood;
+  text-shadow: 1px 1px 1px white;
+  font-weight: lighter;
+}
+p{
+  font-size: 30px;
+  color: burlywood;
+  text-shadow: 1px 1px 1px white;
+  font-weight: lighter;
+}
 #btn_back{
   margin-top: 1%;
   background-color:#8b71cf ;
