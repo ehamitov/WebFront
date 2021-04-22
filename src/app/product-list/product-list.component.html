@@ -5,7 +5,11 @@
   <div class="products">
     <div class="product-item" *ngFor="let product of products">
       <div class="polaroid">
-        <img src="{{product.image}}" width="120" >
+        <p *ngIf="product.image">
+          <a [href]="product.link" target="_blank">
+            <img src={{product.image}} width=120px height=auto>
+          </a>
+        </p>
 
         <h4>
           <a routerLink="/products/{{product.id}}" [title]="product.name + 'details'" >
