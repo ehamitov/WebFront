@@ -2,6 +2,9 @@ div.container {
   text-align: center;
   padding: 10px 20px;
   display:flex;
+  margin-top: 100px;
+  margin-bottom: 150px;
+
 }
 .flex-container {
   display: flex;
