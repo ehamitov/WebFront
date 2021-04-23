@@ -25,7 +25,6 @@ div.polaroid {
   width: 100%;
   margin: 0 auto;
   margin-left: 0;
-
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
