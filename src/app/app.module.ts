@@ -14,13 +14,14 @@ import { CategoryComponent } from './category/category.component';
 import { AppRoutingModule } from './app-routing.module';
 import { NavComponent } from './nav/nav.component';
 import { CartComponent } from './cart/cart.component';
-import { HttpClientModule } from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { ShippingComponent } from './shipping/shipping.component';
 import { FooterComponent } from './footer/footer.component';
 
 //import { MainpageComponent } from './mainpage/mainpage.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import {AuthInterceptor} from "./auth.interceptor";
 
 
 @NgModule({
@@ -52,7 +53,13 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     SignInComponent,
     SignUpComponent
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      multi : true,
+      useClass : AuthInterceptor
+    }
+  ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
