@@ -7,8 +7,6 @@ import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { ProductListComponent } from './product-list/product-list.component';
 
-//import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-//import { InMemoryDataService }  from './in-memory-data.service';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { CategoryComponent } from './category/category.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -18,7 +16,7 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { ShippingComponent } from './shipping/shipping.component';
 import { FooterComponent } from './footer/footer.component';
 
-//import { MainpageComponent } from './mainpage/mainpage.component';
+
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import {AuthInterceptor} from "./auth.interceptor";
@@ -33,7 +31,7 @@ import {AuthInterceptor} from "./auth.interceptor";
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
-      { path: '', component: CategoryComponent },
+      { path: 'sign-in', component: SignInComponent },
     ]),
     AppRoutingModule
   ],

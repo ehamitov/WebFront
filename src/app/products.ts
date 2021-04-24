@@ -9,7 +9,6 @@ export interface Product{
   full:string,
   image: string,
   link:string,
-  buttonn:string
 }
 
 
