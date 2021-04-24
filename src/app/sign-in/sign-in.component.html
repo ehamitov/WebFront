@@ -8,10 +8,8 @@
   </div>
 
   <div *ngIf="logged">
-    <router-outlet></router-outlet>
     <button (click)="logout()">Logout</button>
   </div>
-
 
   <button [routerLink]="['/sign-up']" class="new" type="button">Создать аккаунт</button>
 

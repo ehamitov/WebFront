@@ -6,6 +6,10 @@ export interface Category {
 export interface AuthToken {
   token: string;
 }
+
+export class LoginResponse {
+  token: string;
+}
 export const categories =[
   {
     id:1,

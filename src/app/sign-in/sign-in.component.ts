@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {CategoryService} from '../category.service';
+
+import {ProductService} from "../product.service";
+
 @Component({
   selector: 'app-sign-in',
   templateUrl: './sign-in.component.html',
@@ -18,11 +20,11 @@ export class SignInComponent implements OnInit {
     }
   }
 
-  constructor(private categoryService: CategoryService) {
+  constructor(private productService: ProductService) {
   }
 
   login() {
-    this.categoryService.login(this.username, this.password).subscribe((data) => {
+    this.productService.login(this.username, this.password).subscribe((data) => {
 
       localStorage.setItem('token', data.token);
 
