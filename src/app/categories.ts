@@ -3,6 +3,9 @@ export interface Category {
   name: string;
   image:string;
 }
+export interface AuthToken {
+  token: string;
+}
 export const categories =[
   {
     id:1,

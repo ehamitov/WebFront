@@ -12,6 +12,27 @@ export interface Product{
   buttonn:string
 }
 
+export interface User {
+  username: string;
+  password: string;
+  firstName: string;
+  lastName: string;
+}
+
+export const USERS: User[] = [
+  {
+    firstName: 'Anes',
+    lastName: 'Sakhiyev',
+    username: 's_sakhiyev',
+    password: '123456789'
+  },
+  {
+    firstName: 'Arman',
+    lastName: 'Torebekov',
+    username: 'a_torebekov',
+    password: '123456789'
+  }
+]
 export const products = [
   {
     id: 1,

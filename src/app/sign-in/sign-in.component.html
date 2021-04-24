@@ -1,19 +1,17 @@
 <body>
 <form>
-
-  <div class="segment">
-    <h1>Войти</h1>
+  <div class="segment" *ngIf="!logged">
+    <h1>Login form</h1>
+    <p> <input type="text" [(ngModel)]="username" placeholder="Username"></p>
+    <p> <input type="text" [(ngModel)]="password" placeholder="Password"></p>
+    <button (click)="login()">Login</button>
   </div>
 
-  <label>
-    <input type="text" placeholder="Имя пользователя или почта"/>
-  </label>
+  <div *ngIf="logged">
+    <router-outlet></router-outlet>
+    <button (click)="logout()">Logout</button>
+  </div>
 
-  <label>
-    <input type="password" placeholder="Пароль"/>
-  </label>
-
-  <button [routerLink]="['']" class="red" type="button" ><i class="fas fa-lock-open"></i> Войти </button>
 
   <button [routerLink]="['/sign-up']" class="new" type="button">Создать аккаунт</button>
 
