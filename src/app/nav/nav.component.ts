@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import {CategoryService} from '../category.service';
-import {categories} from '../categories';
+import { Category } from '../categories';
+
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {
-  categories: any;
+  categories: Category[];
   constructor(private categoryService: CategoryService) {}
 
   ngOnInit(): void {
@@ -15,7 +16,8 @@ export class NavComponent implements OnInit {
   }
 
   getCategories() {
-    this.categoryService.getCategories().subscribe(categories => this.categories = categories);
+    this.categoryService.getCategoryList().subscribe(categories => this.categories = categories);
   }
+
 
 }

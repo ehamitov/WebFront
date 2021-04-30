@@ -2,40 +2,41 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {ProductService} from '../product.service';
 import {CategoryService} from '../category.service';
-
+import { Location } from '@angular/common';
+import {Category} from '../categories';
+import {Product} from '../products';
 @Component({
   selector: 'app-category',
   templateUrl: './category.component.html',
   styleUrls: ['./category.component.css']
 })
 export class CategoryComponent implements OnInit {
-  products: any;
-  category: any;
+  products: Product[] ;
+  categories: Category[];
+  id;
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private productService: ProductService,
-    private categoryService: CategoryService
-  ) {
-    this.router.events.subscribe((value =>{
-      this.getProducts();
-      this.getCategory();
-    }));
-  }
+    private categoryService: CategoryService,
+    private location: Location
+  ) {}
 
-  ngOnInit() {
-    this.getProducts();
-    this.getCategory();
+  ngOnInit(): void {
+    this.getProductsCategoryList();
+    this.getId();
+    this.getProductsByCategory();
   }
-
-  getProducts() {
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.productService.getProductsByCategoryId(id).subscribe(products => this.products = products);
+  getId(): void{
+    this.id = +this.route.snapshot.paramMap.get('category_id');
   }
-
-  getCategory() {
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.categoryService.getCategory(id).subscribe(category => this.category = category);
+  getProductsByCategory(): void{
+    this.categoryService.getCategoryProductList(this.id)
+      .subscribe(products => this.products = products);
+  }
+  getProductsCategoryList(): void{
+    this.categoryService.getCategoryList()
+      .subscribe(categories => this.categories = categories);
   }
 
 

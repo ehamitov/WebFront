@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { products,Product } from '../products';
+import { Product } from '../products';
 import { CartService } from '../cart.service';
 import {ProductService} from '../product.service';
 import {Router} from '@angular/router';
@@ -13,21 +13,24 @@ import {Router} from '@angular/router';
 
 
 export class ProductDetailComponent {
-  products = products;
   product;
+
   constructor(
     private route: ActivatedRoute,
     private productService: ProductService,
     private cartService: CartService,
     private router: Router
-  ) { }
+  ) {
+  }
+
   ngOnInit() {
     this.getProduct();
 
   }
+
   getProduct() {
     const id = +this.route.snapshot.paramMap.get('id');
-    this.productService.getProduct(id).subscribe(product => this.product = product);
+    this.productService.getProductDetail(id).subscribe(product => this.product = product);
   }
   addToCart(product) {
     this.cartService.addToCart(product);
@@ -35,13 +38,4 @@ export class ProductDetailComponent {
   }
 
 
-
-// share(product:Product):void {
-//      window.alert(`The ${product.name} has been shared!`);
-
-//   }
-
-  onNotify() {
-    window.alert('You will be notified when the product goes on sale');
-  }
 }

@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import {Observable, of} from 'rxjs';
-import { products } from './products';
 import {HttpClient} from "@angular/common/http";
 import{Product} from './products';
 import {Category} from './categories';
@@ -13,17 +12,19 @@ export class ProductService {
   categories: Category[];
   BASE_URL = 'http://localhost:8000';
   constructor(private http: HttpClient) { }
-  getProduct(id: number): Observable<any> {
-    return of(products.find(product => product.id === id));
+
+
+  getCategoryProductList(id): Observable<Product[]> {
+    return this.http.get<Product[]>(`${this.BASE_URL}/api/categories/${id}/products`);
+  }
+  getProductList(): Observable<Product[]> {
+    return this.http.get<Product[]>(`${this.BASE_URL}/api/products/`);
   }
 
-  getProducts(): Observable<any> {
-    return of(products);
+  getProductDetail(id): Observable<Product> {
+    return this.http.get<Product>(`${this.BASE_URL}/api/products/${id}/`);
   }
 
-  getProductsByCategoryId(id: number): Observable<any> {
-    return of(products.filter(product => product.category_id === id));
-  }
   login(username, password): Observable<LoginResponse> {
     return this.http.post<LoginResponse>(`${this.BASE_URL}/api/login/`, {
       username,

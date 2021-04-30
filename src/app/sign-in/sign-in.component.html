@@ -3,13 +3,13 @@
   <div class="segment" *ngIf="!logged">
     <h1>Login form</h1>
     <p> <input type="text" [(ngModel)]="username" placeholder="Username"></p>
-    <p> <input type="text" [(ngModel)]="password" placeholder="Password"></p>
-    <button (click)="login()">Login</button>
+    <p> <input type="password" [(ngModel)]="password" placeholder="Password"></p>
+    <button [routerLink]="['/nav']" (click)="login()">Login</button>
   </div>
 
-  <div *ngIf="logged">
-    <button (click)="logout()">Logout</button>
-  </div>
+<!--  <div *ngIf="logged">-->
+<!--    <button (click)="logout()">Logout</button>-->
+<!--  </div>-->
 
   <button [routerLink]="['/sign-up']" class="new" type="button">Создать аккаунт</button>
 

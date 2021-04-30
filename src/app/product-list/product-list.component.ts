@@ -1,6 +1,7 @@
+
 import { Component, OnInit } from '@angular/core';
 
-import { products } from '../products';
+import{ Product} from '../products';
 import { ProductService} from '../product.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { ProductService} from '../product.service';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
-  products=products;
+  products: Product[];
 
   constructor(private productService: ProductService) {}
 
@@ -19,8 +20,8 @@ export class ProductListComponent implements OnInit {
   }
 
   getProducts() {
-    // tslint:disable-next-line:no-shadowed-variable
-    this.productService.getProducts().subscribe(products => this.products = products);
+
+    this.productService.getProductList().subscribe(products => this.products = products);
   }
 
 
