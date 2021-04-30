@@ -10,7 +10,7 @@ import{LoginResponse} from "./categories";
 })
 export class ProductService {
   categories: Category[];
-  BASE_URL = 'http://localhost:8000';
+  BASE_URL = 'http://127.0.0.1:8000';
   constructor(private http: HttpClient) { }
 
 
