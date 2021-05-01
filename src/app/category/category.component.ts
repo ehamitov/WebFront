@@ -23,7 +23,6 @@ export class CategoryComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.getProductsCategoryList();
     this.getId();
     this.getProductsByCategory();
   }
@@ -31,13 +30,9 @@ export class CategoryComponent implements OnInit {
     this.id = +this.route.snapshot.paramMap.get('category_id');
   }
   getProductsByCategory(): void{
-    this.categoryService.getCategoryProductList(this.id)
-      .subscribe(products => this.products = products);
+    this.categoryService.getCategoryProductList(this.id).subscribe(products => this.products = products);
   }
-  getProductsCategoryList(): void{
-    this.categoryService.getCategoryList()
-      .subscribe(categories => this.categories = categories);
-  }
+
 
 
 }

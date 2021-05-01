@@ -22,6 +22,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import {AuthInterceptor} from "./auth.interceptor";
 
 
+
 @NgModule({
   imports: [
 
@@ -49,7 +50,7 @@ import {AuthInterceptor} from "./auth.interceptor";
     FooterComponent,
     //MainpageComponent,
     SignInComponent,
-    SignUpComponent
+    SignUpComponent,
   ],
   providers: [
     {

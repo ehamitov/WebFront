@@ -7,7 +7,10 @@
   <p>Password: <input type="text" [(ngModel)]="password"></p>
   <button (click)="login()">Login</button>
 </div>
-
+<div *ngIf="logged">
+  <router-outlet></router-outlet>
+  <button (click)="logout()">Logout</button>
+</div>
 
 <div class="row">
 
@@ -17,8 +20,5 @@
   </div>
 </div>
 
-<div *ngIf="logged">
-  <router-outlet></router-outlet>
-  <button (click)="logout()">Logout</button>
-</div>
+
 <app-footer></app-footer>

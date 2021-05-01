@@ -1,7 +1,10 @@
+import {Product} from "./products";
+
 export interface Category {
   id: number;
   name: string;
   image:string;
+  product:Product;
 }
 export interface AuthToken {
   token: string;

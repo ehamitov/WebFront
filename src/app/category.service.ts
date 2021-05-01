@@ -8,14 +8,10 @@ import {  AuthToken,Category } from './categories'
   providedIn: 'root',
 })
 export class CategoryService {
-  BASE_URL = 'http://localhost:8000';
+  BASE_URL = 'http://127.0.0.1:8000';
   constructor(private http: HttpClient) { }
   getCategoryList(): Observable<Category[]> {
-    return this.http.get<Category[]>(`${this.BASE_URL}api/categories/`);
-  }
-
-  getCategoryDetail(id): Observable<Category> {
-    return this.http.get<Category>(`${this.BASE_URL}/api/categories/${id}/`);
+    return this.http.get<Category[]>(`${this.BASE_URL}/api/categories/`);
   }
 
   getCategoryProductList(id:number): Observable<Product[]> {
