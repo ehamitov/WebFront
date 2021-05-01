@@ -31,7 +31,7 @@ import {AuthInterceptor} from "./auth.interceptor";
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
-      { path: 'sign-in', component: SignInComponent },
+      { path: 'nav', component: NavComponent },
     ]),
     AppRoutingModule
   ],

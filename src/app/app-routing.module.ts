@@ -12,7 +12,7 @@ import{SignUpComponent} from './sign-up/sign-up.component';
 import { from } from 'rxjs';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/sign-in', pathMatch: 'full' },
+  { path: '', redirectTo: '/nav', pathMatch: 'full' },
   { path: 'products', component: ProductListComponent },
   { path: 'products/:id', component: ProductDetailComponent },
   { path: 'category/:id', component: CategoryComponent},
